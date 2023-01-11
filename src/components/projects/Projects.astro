@@ -3,7 +3,7 @@ import { PROJECTS } from "../../projects";
 import ProjectCard from "../ProjectCard.astro";
 ---
 
-<div class="flex sm:flex-row flex-col gap-8 justify-center p-2 items-stretch flex-wrap">
+<div class="flex lg:flex-row flex-col gap-8 justify-center p-2 items-stretch flex-wrap">
   {
     PROJECTS.map((project) => {
       return <ProjectCard project={project} />;

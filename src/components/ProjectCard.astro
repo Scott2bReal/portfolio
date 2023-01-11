@@ -1,3 +1,22 @@
-<div>
+---
+import type { Project } from '../types';
 
-</div>
+export interface Props {
+  project: Project
+}
+
+const {project} = Astro.props;
+const {projectName, projectDescription, projectImagePath, projectLink} = project
+---
+
+<a href={projectLink}>
+  <div
+    class="sm:max-w-[35vw] w-[80vw] text-center p-4 outline outline-niceGreen rounded-xl shadow-lg shadow-neutral-900"
+  >
+    <!-- Project Name Header -->
+    <h3 class='text-2xl font-bold'>{projectName}</h3>
+    <img src={projectImagePath} height="96px" class="mx-auto" />
+    <!-- Project Description -->
+    <p>{projectDescription}</p>
+  </div>
+</a>

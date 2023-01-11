@@ -6,17 +6,22 @@ export interface Props {
 }
 
 const {project} = Astro.props;
-const {projectName, projectDescription, projectImagePath, projectLink} = project
+const {projectName, projectDescription, projectLink} = project
 ---
 
-<a href={projectLink}>
   <div
-    class="sm:max-w-[35vw] w-[80vw] text-center p-4 outline outline-niceGreen rounded-xl shadow-lg shadow-neutral-900"
+    class="text-center p-4 outline outline-niceGreen rounded-xl shadow-lg shadow-neutral-900 flex-1"
   >
     <!-- Project Name Header -->
-    <h3 class='text-2xl font-bold'>{projectName}</h3>
-    <img src={projectImagePath} height="96px" class="mx-auto" />
+  <div>
+    <div class=''>
+      <h3 class='text-2xl font-bold inline'>{projectName}</h3>
+      <a href={projectLink} target='_blank'>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline text-niceBlue hover:opacity-50 -translate-y-1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+        </svg>
+      </a>
+    </div>
     <!-- Project Description -->
     <p>{projectDescription}</p>
   </div>
-</a>

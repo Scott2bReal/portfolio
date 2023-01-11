@@ -15,22 +15,28 @@ const { title } = Astro.props;
     <SEO />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="images/scott_at_work.png" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="images/scott_at_work_icon.png"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <slot />
-    <footer class='absolute bottom-0 sm:p-6 px-2 w-full flex items-center'>
+    <footer class="absolute bottom-0 sm:p-6 px-2 w-full flex items-center">
       <Socials />
       <div class="w-full"></div>
       <span class="min-w-fit"
-        >Made with <a href="https://astro.build" class="link text-gradient hover:opacity-50"
-          >Astro</a
+        >Made with <a
+          href="https://astro.build"
+          class="link text-gradient hover:opacity-50">Astro</a
         ></span
       >
     </footer>
-  </body><style is:global>
-    @import "../styles/global.css";
-  </style>
+    <style is:global>
+      @import "../styles/global.css";
+    </style>
+  </body>
 </html>

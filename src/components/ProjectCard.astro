@@ -1,27 +1,41 @@
 ---
-import type { Project } from '../types';
+import type { Project } from "../types";
 
 export interface Props {
-  project: Project
+  project: Project;
 }
 
-const {project} = Astro.props;
-const {projectName, projectDescription, projectLink} = project
+const { project } = Astro.props;
+const { projectName, projectDescription, projectLink } = project;
 ---
 
-  <div
-    class="text-center p-4 outline outline-niceGreen rounded-xl shadow-lg shadow-neutral-900 flex-1"
-  >
-    <!-- Project Name Header -->
+<div
+  class="text-center p-4 outline outline-niceGreen rounded-xl shadow-lg shadow-neutral-900 flex-1"
+  id={projectName + projectLink}
+>
+  <!-- Project Name Header -->
   <div>
-    <div class=''>
-      <h3 class='text-2xl font-bold inline'>{projectName}</h3>
-      <a href={projectLink} target='_blank'>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline text-niceBlue hover:opacity-50 -translate-y-1">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+    <div class="">
+      <h3 class="text-2xl font-bold inline">{projectName}</h3>
+      <a href={projectLink} target="_blank">
+        <svg
+          name={projectName}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 inline text-niceBlue hover:opacity-50 -translate-y-1"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
         </svg>
       </a>
     </div>
     <!-- Project Description -->
     <p>{projectDescription}</p>
   </div>
+  <script></script>
+</div>

@@ -1,0 +1,82 @@
+<div class="flex gap-1 justify-center items-center relative">
+  <h2 class="py-6 text-2xl">About Me</h2>
+  <button id="show" name='Show about me section'
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6 inline text-niceBlue"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+    </svg></button
+  >
+  <button id="hide" class="hidden text-niceBlue" name='Hide about me section'>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+    </svg>
+  </button>
+  <p
+    id="aboutMe"
+    class="hidden p-2 z-[2] outline-niceBlue outline rounded-xl absolute top-20 bg-lightBackground/20 backdrop-blur-xl md:max-w-[50vw]"
+  >
+    I'm a musician currently living in Chicago. After over a decade of playing
+    trumpet professionally, I decided to pursue another passion - tech!<br /><br
+    />After completing Harvard's <a
+      class="text-niceGreen hover:opacity-50"
+      href="https://cs50.harvard.edu/x/2023/">CS50x course</a
+    > in 2020, I found <a
+      href="https://launchschool.com"
+      class="text-niceGreen hover:opacity-50">Launch School</a
+    >.<br /><br />Through their curriculum and mastery-based approach to
+    learning the fundamentals of web development, my skills have grown to the
+    point where I have been able to solve real problems using code.<br /><br />I
+    am excited to continue to apply and grow these skills in new and innovative
+    ways
+  </p>
+</div>
+<script>
+  const aboutMe = document.getElementById("aboutMe");
+  const show = document.getElementById("show");
+  const hide = document.getElementById("hide");
+  console.log(aboutMe);
+
+  const toggleAboutMe = () => {
+    if (!aboutMe || !show || !hide) return;
+    const showAboutMe = () => {
+      aboutMe.classList.remove("hidden");
+      show.classList.add("hidden");
+      hide.classList.remove("hidden");
+    };
+
+    const hideAboutMe = () => {
+      aboutMe.classList.add("hidden");
+      show.classList.remove("hidden");
+      hide.classList.add("hidden");
+    };
+
+    show.addEventListener("click", () => {
+      showAboutMe();
+    });
+
+    hide.addEventListener("click", () => {
+      hideAboutMe();
+    });
+  };
+
+  toggleAboutMe();
+</script>

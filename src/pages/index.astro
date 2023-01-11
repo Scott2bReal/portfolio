@@ -1,12 +1,16 @@
 ---
+import AboutMe from '../components/AboutMe.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="scottHoecker">
-  <main>
-    <div class='w-fit'>
-      <h1 class="text-5xl">Hi, I'm Scott Hoecker</h1>
-      <p class='text-right'>(like the "o" isn't there)</p>
+  <main class='md:w-[80vw] mx-auto text-center'>
+    <div class='w-fit mx-auto'>
+      <h1 class="lg:text-7xl text-5xl">Hi, I'm <span class='text-niceGreen block sm:inline'>Scott Hoecker</span></h1>
+      <p class='text-right text-niceBlue'>(like the "o" isn't there)</p>
     </div>
+    <!-- <img src='images/scott_profile.webp' height='200px' width='200px' class='rounded-xl mx-auto p-2'/> -->
+    <p class='pt-8'>Musician // Developer // Student</p>
+    <AboutMe />
   </main>
 </Layout>
 <style is:global>

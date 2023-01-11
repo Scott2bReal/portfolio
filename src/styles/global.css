@@ -3,4 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply bg-mainBackground text-mainText tracking-widest
+  }
+
+  body {
+    @apply w-full p-2
+  }
+
+  .social-icon {
+    @apply h-8 w-8 hover:text-niceGreen transition duration-150 ease-in-out
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-gradient-to-r from-niceBlue to-niceGreen bg-clip-text;
+  }
 }

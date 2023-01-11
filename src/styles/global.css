@@ -4,15 +4,17 @@
 
 @layer base {
   html {
-    @apply bg-mainBackground text-mainText tracking-widest
+    @apply bg-mainBackground text-mainText tracking-widest;
   }
 
   body {
-    @apply w-full p-2
+    @apply w-full p-2;
   }
+}
 
+@layer components {
   .social-icon {
-    @apply h-8 w-8 hover:text-niceGreen transition duration-150 ease-in-out
+    @apply h-8 w-8 hover:text-niceGreen transition duration-150 ease-in-out;
   }
 
   .text-gradient {

@@ -1,16 +1,37 @@
 ---
-import AboutMe from '../components/AboutMe.astro';
-import Layout from '../layouts/Layout.astro';
+import AboutMe from "../components/AboutMe.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Layout from "../layouts/Layout.astro";
+import { PROJECTS } from "../projects";
 ---
+
 <Layout title="Scott Hoecker">
-  <main class='md:w-[80vw] mx-auto text-center'>
-    <div class='w-fit mx-auto'>
-      <h1 class="lg:text-7xl text-5xl">Hi, I'm <span class='text-niceGreen block sm:inline'>Scott Hoecker</span></h1>
-      <p class='text-right text-niceBlue'>(like the "o" isn't there)</p>
+  <main class="md:w-[80vw] mx-auto text-center">
+    <div class="w-fit mx-auto sm:pt-16 pt-8">
+      <h1 class="lg:text-7xl text-5xl">
+        Hi, I'm <span class="text-niceGreen block sm:inline"
+          >Scott Hoecker</span>
+      </h1>
+      <p class="text-right text-niceBlue">(like the "o" isn't there)</p>
     </div>
     <!-- <img src='images/scott_profile.webp' height='200px' width='200px' class='rounded-xl mx-auto p-2'/> -->
-    <p class='pt-8'>Musician // Developer // Student</p>
+    <p class="pt-8">Musician // Developer // Student</p>
+
+    <!-- About me dropdown -->
     <AboutMe />
+
+    <!-- Project Showcase -->
+    <h2 class='text-3xl pb-4'>Projects</h2>
+    <section
+      id="projects"
+      class="flex gap-2 justify-center w-full items-center"
+    >
+      {
+        PROJECTS.map((project) => {
+          return <ProjectCard project={project} />;
+        })
+      }
+    </section>
   </main>
 </Layout>
 <style is:global>

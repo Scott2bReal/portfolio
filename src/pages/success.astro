@@ -3,24 +3,6 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Success">
-  <form
-    data-netlify="true"
-    netlify-honeypot="botField"
-    name="contact"
-    method="POST"
-    class="hidden"
-  >
-    <input class="hidden" name="form-name" value="contact" />
-    <p>
-      Don't fill this out if you're human!
-      <input class="hidden" name="botField" />
-    </p>
-    <input name="firstName" class="hidden" />
-    <input name="lastName" class="hidden" />
-    <input name="email" type="email" class="hidden" />
-    <input name="subject" class="hidden" />
-    <textarea name="message" class="hidden"></textarea>
-  </form>
   <main class="h-[80vh] text-center">
     <h1 class="p-12">Thanks for reaching out!</h1>
     <a href="/" class="text-niceBlue hover:opacity-50">Back Home</a>

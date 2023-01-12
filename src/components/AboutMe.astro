@@ -62,20 +62,21 @@
   const hide = document.getElementById("hide");
   const downArrow = document.getElementById("downArrow");
 
+  const showAboutMe = () => {
+    if (!aboutMe || !show || !hide || !downArrow) return;
+    aboutMe.classList.remove("hidden");
+    show.classList.add("hidden");
+    hide.classList.remove("hidden");
+  };
+
+  const hideAboutMe = () => {
+    if (!aboutMe || !show || !hide || !downArrow) return;
+    aboutMe.classList.add("hidden");
+    show.classList.remove("hidden");
+    hide.classList.add("hidden");
+  };
   const toggleAboutMe = () => {
     if (!aboutMe || !show || !hide || !downArrow) return;
-
-    const showAboutMe = () => {
-      aboutMe.classList.remove("hidden");
-      show.classList.add("hidden");
-      hide.classList.remove("hidden");
-    };
-
-    const hideAboutMe = () => {
-      aboutMe.classList.add("hidden");
-      show.classList.remove("hidden");
-      hide.classList.add("hidden");
-    };
 
     show.addEventListener("click", () => {
       showAboutMe();
@@ -85,6 +86,13 @@
     hide.addEventListener("click", () => {
       hideAboutMe();
     });
+
+    document.addEventListener("click", (e) => {
+      console.log(e)
+      if (e.target !== aboutMe && e.target !== downArrow) {
+        hideAboutMe();
+      }
+    })
   };
 
   toggleAboutMe();

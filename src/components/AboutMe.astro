@@ -80,6 +80,9 @@
 
     show.addEventListener("click", () => {
       showAboutMe();
+      console.log(
+        `Hi there! Thanks for checking out my site. If you'd like to get in touch, go ahead and click the envelope at the bottom of this page!`
+      );
       downArrow.classList.remove("animate-bounce");
     });
 
@@ -91,7 +94,7 @@
       if (e.target !== aboutMe && e.target !== downArrow) {
         hideAboutMe();
       }
-    })
+    });
   };
 
   toggleAboutMe();

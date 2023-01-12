@@ -7,5 +7,5 @@ Ascent Climbing & Fitness.`
 export const youthRec: Project = {
   projectName: 'Anchor',
   projectDescription: description,
-  projectLink: `https://youth-rec.vercel.app`,
+  projectLink: `https://anchor-public.vercel.app`,
 }

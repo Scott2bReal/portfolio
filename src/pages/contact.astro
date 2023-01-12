@@ -26,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
         <div class="text-left child:w-full">
           <label class="block py-1">Last Name</label>
-          <input name="lastName" id="lastName" required />
+          <input name="lastName" id="lastName" />
         </div>
       </div>
 
@@ -45,7 +45,7 @@ import Layout from "../layouts/Layout.astro";
         <textarea name="message" id="message" rows='5'></textarea>
       </div>
 
-      <button type='submit' id='submitButton' class='p-2 rounded-xl bg-niceGreen text-mainBackground'>
+      <button type='submit' id='submitButton' class='p-2 rounded-xl bg-niceGreen text-mainBackground z-10'>
         Submit
       </button>
 

@@ -1,8 +1,12 @@
 ---
-const url = Astro.url
-const envelopeStyles = url.href.match(/contact/) ? 'h-8 w-8 social-icon text-niceGreen' : 'h-8 w-8 social-icon'
+const url = Astro.url;
+const envelopeStyles = url.href.match(/contact/)
+  ? "h-8 w-8 social-icon text-niceGreen"
+  : "h-8 w-8 social-icon";
 ---
+
 <a href="https://github.com/Scott2bReal">
+  <span class="hidden">Scott&apos;s GitHub</span>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 496 512"
@@ -16,6 +20,7 @@ const envelopeStyles = url.href.match(/contact/) ? 'h-8 w-8 social-icon text-nic
 </a>
 
 <a href="https://www.linkedin.com/in/scott-hoecker-4b8851261/">
+  <span class="hidden">LinkedIn link</span>
   <svg
     fill="currentColor"
     class="social-icon"
@@ -33,8 +38,9 @@ const envelopeStyles = url.href.match(/contact/) ? 'h-8 w-8 social-icon text-nic
 </a>
 
 <a href="/contact">
+  <span class="hidden">Link to contact form</span>
   <svg
-    id='envelope'
+    id="envelope"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="currentColor"
@@ -50,15 +56,14 @@ const envelopeStyles = url.href.match(/contact/) ? 'h-8 w-8 social-icon text-nic
   </svg>
 </a>
 <script>
-  const envelope = document.getElementById('envelope')
+  const envelope = document.getElementById("envelope");
 
-  const greenEnvelope = (envelope: HTMLElement | null ) => {
+  const greenEnvelope = (envelope: HTMLElement | null) => {
     if (!envelope) return;
-    envelope.addEventListener('click', () => {
-      envelope.classList.add('text-niceGreen')
-    })
-  }
+    envelope.addEventListener("click", () => {
+      envelope.classList.add("text-niceGreen");
+    });
+  };
 
-  greenEnvelope(envelope)
-
+  greenEnvelope(envelope);
 </script>

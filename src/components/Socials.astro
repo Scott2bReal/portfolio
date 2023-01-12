@@ -34,6 +34,7 @@ const envelopeStyles = url.href.match(/contact/) ? 'h-8 w-8 social-icon text-nic
 
 <a href="/contact">
   <svg
+    id='envelope'
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="currentColor"
@@ -48,3 +49,16 @@ const envelopeStyles = url.href.match(/contact/) ? 'h-8 w-8 social-icon text-nic
     ></path>
   </svg>
 </a>
+<script>
+  const envelope = document.getElementById('envelope')
+
+  const greenEnvelope = (envelope: HTMLElement | null ) => {
+    if (!envelope) return;
+    envelope.addEventListener('click', () => {
+      envelope.classList.add('text-niceGreen')
+    })
+  }
+
+  greenEnvelope(envelope)
+
+</script>

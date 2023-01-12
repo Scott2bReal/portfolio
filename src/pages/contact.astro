@@ -11,9 +11,10 @@ import Layout from "../layouts/Layout.astro";
       netlify-honeypot="botField"
       name="contact"
       method="POST"
-      action="/contact"
+      action="/success"
     >
-      <input class="hidden" name="form-name" value="contactUs" />
+      <input class="hidden" name="form-name" value="contact" />
+
       <p class="hidden">
         Don't fill this out if you're human!
         <input class="hidden" name="botField" />
@@ -62,7 +63,6 @@ import Layout from "../layouts/Layout.astro";
     submitButton.addEventListener('mousedown', () => {
       submitButton.classList.add('scale-95')
     })
-
 
     submitButton.addEventListener('mouseup', () => {
       submitButton.classList.remove('scale-95')

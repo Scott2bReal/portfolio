@@ -10,11 +10,11 @@ const { projectName, projectDescription, projectLink } = project;
 ---
 
 <div
-  class="text-center p-4 outline outline-niceGreen rounded-xl shadow-lg shadow-neutral-900 flex-1"
+  class="projectCard text-center p-4 outline outline-niceGreen rounded-xl shadow-lg shadow-neutral-900 flex-1"
   id={projectName + projectLink}
 >
   <!-- Project Name Header -->
-  <div class='projectCard transition duration-500 ease-in-out'>
+  <div class='transition duration-500 ease-in-out'>
     <div class="">
       <a href={projectLink} target="_blank">
       <h3 class="text-2xl font-bold inline">{projectName}</h3>
@@ -47,9 +47,11 @@ const animateLink = () => {
   const cardsArray = Array.from(cards)
 
   cardsArray.forEach(card => {
-    const div = card.children[0]
-    if (!div) return;
-    const link = div.children[0]
+    const div1 = card.children[0]
+    if (!div1) return;
+    const div2 = div1.children[0]
+    if (!div2) return;
+    const link = div2.children[0]
     if (!link) return;
     const svg = link.children[1]
     if (!svg) return;

@@ -1,6 +1,7 @@
 import type {Project} from '../types'
 
-const description = `A Discord bot built in Rust to manage and track a weekly DnD game`
+const description = `A Discord bot built in Rust to manage and track a
+long-running weekly Dungeons and Dragons game`
 
 export const robocap: Project = {
   projectName: 'ROBOCAP',

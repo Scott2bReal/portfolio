@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply bg-mainBackground text-mainText tracking-widest;
+    @apply bg-mainBackground text-mainText tracking-widest selection:bg-niceGreen selection:text-mainBackground;
   }
 
   body {

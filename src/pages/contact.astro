@@ -1,73 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Contact from "../components/Contact"
 ---
 
 <Layout title="Contact">
   <main class="text-center">
     <h1 class="text-4xl pt-7 pb-8">Get in Touch</h1>
-    <form
-      class="flex flex-col gap-2 md:w-[50vw] mx-auto p-2"
-      data-netlify="true"
-      netlify-honeypot="botField"
-      name="contact"
-      method="POST"
-      action="/success"
-    >
-      <input class="hidden" name="form-name" value="contact" />
-
-      <p class="hidden">
-        Don't fill this out if you're human!
-        <input class="hidden" name="botField" />
-      </p>
-
-      <div class="flex gap-2 child:flex-grow">
-        <div class="text-left child:w-full">
-          <label class="block py-1">First Name *</label>
-          <input name="firstName" id="firstName" required />
-        </div>
-        <div class="text-left child:w-full">
-          <label class="block py-1">Last Name</label>
-          <input name="lastName" id="lastName" />
-        </div>
-      </div>
-
-      <div class="text-left child:w-full">
-        <label class="block py-1" for="email">Email *</label>
-        <input name="email" id="email" type="email" />
-      </div>
-
-      <div class="text-left child:w-full">
-        <label class="block py-1" for="subject">Subject *</label>
-        <input name="subject" id="subject" />
-      </div>
-
-      <div class="text-left child:w-full">
-        <label class="block py-1" for="message">Message *</label>
-        <textarea name="message" id="message" rows='5'></textarea>
-      </div>
-
-      <button type='submit' id='submitButton' class='p-2 rounded-xl bg-niceGreen text-lg text-mainBackground z-10'>
-        Submit
-      </button>
-
-      <a href='/' class='text-niceBlue hover:opacity-50'>Back Home</a>
-    </form>
+    <Contact client:load />
   </main>
 </Layout>
-<script>
-  const submitButton = document.getElementById('submitButton')
-
-  const animateSubmitButton = () => {
-    if (!submitButton) return;
-
-    submitButton.addEventListener('mousedown', () => {
-      submitButton.classList.add('scale-95')
-    })
-
-    submitButton.addEventListener('mouseup', () => {
-      submitButton.classList.remove('scale-95')
-    })
-  }
-
-  animateSubmitButton()
-</script>

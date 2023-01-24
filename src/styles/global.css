@@ -14,11 +14,11 @@
 
 @layer components {
   input {
-    @apply text-mainBackground p-1
+    @apply text-mainBackground p-1 focus:outline-niceBlue focus:outline-none
   }
 
   textarea {
-    @apply text-mainBackground p-1
+    @apply text-mainBackground p-1 focus:outline-niceBlue focus:outline-none
   }
 
   .social-icon {

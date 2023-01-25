@@ -13,7 +13,6 @@ export default function Contact() {
   const [subject, setSubject] = createSignal('')
   const [message, setMessage] = createSignal('')
   const [botField, setBotField] = createSignal('')
-  const [isClicked, setIsClicked] = createSignal(false)
   const [isSubmitted, setIsSubmitted] = createSignal(false)
 
   // Form handling
@@ -42,7 +41,7 @@ export default function Contact() {
     setters.forEach((setter) => setter(''))
     return null
   }
-  const isActive = createMemo(() => isFormComplete(requiredGetters))
+  const isDisabled = createMemo(() => !isFormComplete(requiredGetters))
   onCleanup(() => {
     setIsSubmitted(false)
     clearForm(setters)
@@ -162,24 +161,16 @@ export default function Contact() {
         ></textarea>
       </div>
 
-      {isActive() ? (
+      {
         <button
           type='submit'
           id='submitButton'
-          onMouseDown={() => setIsClicked(true)}
-          onMouseUp={() => setIsClicked(false)}
-          class={`${isClicked() ? 'scale-95' : ''} p-2 rounded-xl bg-niceGreen text-lg text-mainBackground z-10`}
+          disabled={isDisabled()}
+          class={`${isDisabled() ? `opacity-50` : ``} p-2 rounded-xl bg-niceGreen text-lg text-mainBackground z-10 transition duration-300 ease-in-out`}
         >
-          Submit
+          {isSubmitted() ? `Thanks for reaching out!` : `Submit`}
         </button>
-      ) : (
-        <button
-          disabled
-          class={`opacity-50 p-2 rounded-xl bg-niceGreen text-lg text-mainBackground z-10`}
-        >
-          {isSubmitted() ? 'Thanks for reaching out!' : 'Submit'}
-        </button>
-      )}
+      }
 
       <a href='/' class='text-niceBlue hover:opacity-50'>
         Back Home

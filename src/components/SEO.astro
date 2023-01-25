@@ -1,5 +1,5 @@
 ---
-const url = Astro.url
+const url = new URL(Astro.url.pathname, Astro.site)
 ---
 <link rel="canonical" href={url}/>
 <meta name="title" content="Scott Hoecker" />

@@ -2,8 +2,7 @@ import { Accessor, createMemo, createSignal, onCleanup, Setter } from 'solid-js'
 
 const isEmpty = (string: string) => {
   if (!string) return true
-  if (string.length === 0) return true
-  if (string.replace(/\s/, '').length === 0) return true
+  if (string.trim().length === 0) return true
   return false
 }
 
@@ -17,6 +16,7 @@ export default function Contact() {
   const [isClicked, setIsClicked] = createSignal(false)
   const [isSubmitted, setIsSubmitted] = createSignal(false)
 
+  // Form handling
   const isFormComplete = (inputs: Accessor<string>[]) => {
     if (isSubmitted()) return false
     for (let i = 0; i < inputs.length; i++) {
@@ -29,9 +29,7 @@ export default function Contact() {
     }
     return true
   }
-
-  const getters = [firstName, email, subject, message]
-
+  const requiredGetters = [firstName, email, subject, message]
   const setters = [
     setFirstName,
     setLastName,
@@ -40,12 +38,11 @@ export default function Contact() {
     setMessage,
     setBotField,
   ]
-
   const clearForm = (setters: Setter<string>[]) => {
     setters.forEach((setter) => setter(''))
     return null
   }
-  const isActive = createMemo(() => isFormComplete(getters))
+  const isActive = createMemo(() => isFormComplete(requiredGetters))
   onCleanup(() => {
     setIsSubmitted(false)
     clearForm(setters)

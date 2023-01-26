@@ -1,6 +1,6 @@
 import type {Project} from '../types'
 
-const description = `Full-stack app built with Typescript, Prisma, TRPC,
+const description = `Full-stack app built with Typescript, Prisma, tRPC,
 NextJS, and Slack integration for managing the Youth Rec program at First
 Ascent Climbing & Fitness.`
 

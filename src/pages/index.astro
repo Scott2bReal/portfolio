@@ -1,6 +1,6 @@
 ---
 import AboutMe from "../components/AboutMe.astro";
-import Projects from "../components/projects/Projects.astro";
+import Projects from "../components/solid-projects/Projects";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -21,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
     <!-- Project Showcase -->
     <section id="projects">
       <h2 class="text-3xl p-4">Things I've Built</h2>
-      <Projects />
+      <Projects client:load />
     </section>
   </main>
 </Layout>

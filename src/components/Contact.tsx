@@ -50,7 +50,7 @@ export default function Contact() {
       netlify-honeypot='botField'
       name='contact'
       method='post'
-      action='/success'
+      action='/'
       onSubmit={async (e) => {
         e.preventDefault()
         const data = {
@@ -69,7 +69,7 @@ export default function Contact() {
             )
             .join('&')
         }
-        await fetch('/contact', {
+        await fetch('/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

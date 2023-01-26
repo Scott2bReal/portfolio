@@ -1,8 +1,13 @@
+---
+import {Image} from '@astrojs/image/components'
+---
+
 <div class="flex gap-1 justify-center items-center relative pt-4">
-  <img
+  <Image
     src="images/scott_at_work_96.png"
-    height="64px"
-    width="64px"
+    height={64}
+    width={64}
+    format='webp'
     alt="Scott hard at work"
   />
   <h2 class="py-6 text-2xl">About Me</h2>

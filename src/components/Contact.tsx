@@ -7,10 +7,8 @@ const isEmpty = (string: string) => {
 }
 
 export default function Contact() {
-  const [firstName, setFirstName] = createSignal('')
-  const [lastName, setLastName] = createSignal('')
+  const [name, setName] = createSignal('')
   const [email, setEmail] = createSignal('')
-  const [subject, setSubject] = createSignal('')
   const [message, setMessage] = createSignal('')
   const [botField, setBotField] = createSignal('')
   const [isSubmitted, setIsSubmitted] = createSignal(false)
@@ -28,12 +26,10 @@ export default function Contact() {
     }
     return true
   }
-  const requiredGetters = [firstName, email, subject, message]
+  const requiredGetters = [name, email, message]
   const setters = [
-    setFirstName,
-    setLastName,
+    setName,
     setEmail,
-    setSubject,
     setMessage,
     setBotField,
   ]
@@ -49,7 +45,7 @@ export default function Contact() {
 
   return (
     <form
-      class='flex flex-col gap-2 md:w-[50vw] mx-auto p-2'
+      class='flex flex-col gap-2 md:w-[50vw] mx-auto px-2'
       data-netlify='true'
       netlify-honeypot='botField'
       name='contact'
@@ -58,10 +54,8 @@ export default function Contact() {
       onSubmit={async (e) => {
         e.preventDefault()
         const data = {
-          firstName: firstName(),
-          lastName: lastName(),
+          name: name(),
           email: email(),
-          subject: subject(),
           message: message(),
           botField: botField(),
         }
@@ -101,26 +95,15 @@ export default function Contact() {
         />
       </div>
 
-      <div class='flex gap-2 child:flex-grow'>
-        <div class='text-left child:w-full'>
-          <label class='block py-1'>First Name *</label>
-          <input
-            name='firstName'
-            id='firstName'
-            value={firstName()}
-            onInput={(e) => setFirstName(e.currentTarget.value)}
-            required
-          />
-        </div>
-        <div class='text-left child:w-full'>
-          <label class='block py-1'>Last Name</label>
-          <input
-            name='lastName'
-            id='lastName'
-            value={lastName()}
-            onInput={(e) => setLastName(e.currentTarget.value)}
-          />
-        </div>
+      <div class='text-left child:w-full'>
+        <label class='block py-1'>Name *</label>
+        <input
+          name='name'
+          id='name'
+          value={name()}
+          onInput={(e) => setName(e.currentTarget.value)}
+          required
+        />
       </div>
 
       <div class='text-left child:w-full'>
@@ -133,18 +116,6 @@ export default function Contact() {
           type='email'
           value={email()}
           onInput={(e) => setEmail(e.currentTarget.value)}
-        />
-      </div>
-
-      <div class='text-left child:w-full'>
-        <label class='block py-1' for='subject'>
-          Subject *
-        </label>
-        <input
-          name='subject'
-          id='subject'
-          value={subject()}
-          onInput={(e) => setSubject(e.currentTarget.value)}
         />
       </div>
 
@@ -171,10 +142,6 @@ export default function Contact() {
           {isSubmitted() ? `Thanks for reaching out!` : `Submit`}
         </button>
       }
-
-      <a href='/' class='text-niceBlue hover:opacity-50'>
-        Back Home
-      </a>
     </form>
   )
 }

@@ -1,7 +1,8 @@
 ---
 import AboutMe from "../components/AboutMe.astro";
 import Layout from "../layouts/Layout.astro";
-import Projects from '../components/projects/Projects'
+import Projects from "../components/projects/Projects";
+import Contact from "../components/Contact";
 ---
 
 <Layout title="Scott Hoecker">
@@ -22,6 +23,11 @@ import Projects from '../components/projects/Projects'
     <section id="projects">
       <h2 class="text-3xl p-4">Things I've Built</h2>
       <Projects client:load />
+    </section>
+
+    <section id="contact">
+      <h1 class="text-3xl pt-7 pb-7">Get in Touch</h1>
+      <Contact client:load />
     </section>
   </main>
 </Layout>

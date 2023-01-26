@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply bg-mainBackground text-mainText tracking-widest selection:bg-niceGreen selection:text-mainBackground;
+    @apply bg-mainBackground text-mainText tracking-widest selection:bg-niceBlue selection:text-mainBackground;
   }
 
   body {
@@ -14,11 +14,11 @@
 
 @layer components {
   input {
-    @apply text-mainBackground p-1 focus:outline-niceBlue focus:outline-none
+    @apply text-mainBackground bg-mainText p-1 focus:outline-niceBlue focus:outline-none rounded-xl
   }
 
   textarea {
-    @apply text-mainBackground p-1 focus:outline-niceBlue focus:outline-none
+    @apply text-mainBackground bg-mainText p-1 focus:outline-niceBlue focus:outline-none rounded-xl
   }
 
   .social-icon {

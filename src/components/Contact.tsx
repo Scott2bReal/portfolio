@@ -12,6 +12,7 @@ export default function Contact() {
   const [message, setMessage] = createSignal('')
   const [botField, setBotField] = createSignal('')
   const [isSubmitted, setIsSubmitted] = createSignal(false)
+  console.log(`Hi there, thanks for checking out my site! I'm always happy to collaborate and meet new people, so please hit me up using the contact form if you're so inclined`)
 
   // Form handling
   const isFormComplete = (inputs: Accessor<string>[]) => {

@@ -11,8 +11,7 @@ import {Image} from '@astrojs/image/components'
     alt="Scott hard at work"
   />
   <h2 class="py-6 text-2xl">About Me</h2>
-  <button id="show">
-    <span class="hidden">Show about me section</span>
+  <button id="show" aria-label="showAboutMe">
     <svg
       id="downArrow"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +27,7 @@ import {Image} from '@astrojs/image/components'
         d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
     </svg></button
   >
-  <button id="hide" class="hidden text-niceBlue" name="Hide about me section">
+  <button id="hide" class="hidden text-niceBlue" aria-label="hideAboutMe">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

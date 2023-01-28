@@ -12,7 +12,9 @@ export default function Contact() {
   const [message, setMessage] = createSignal('')
   const [botField, setBotField] = createSignal('')
   const [isSubmitted, setIsSubmitted] = createSignal(false)
-  console.log(`Hi there, thanks for checking out my site! I'm always happy to collaborate and meet new people, so please hit me up using the contact form if you're so inclined`)
+  console.log(
+    `Hi there, thanks for checking out my site! I'm always happy to collaborate and meet new people, so please hit me up using the contact form if you're so inclined`
+  )
 
   // Form handling
   const isFormComplete = (inputs: Accessor<string>[]) => {
@@ -28,12 +30,7 @@ export default function Contact() {
     return true
   }
   const requiredGetters = [name, email, message]
-  const setters = [
-    setName,
-    setEmail,
-    setMessage,
-    setBotField,
-  ]
+  const setters = [setName, setEmail, setMessage, setBotField]
   const clearForm = (setters: Setter<string>[]) => {
     setters.forEach((setter) => setter(''))
     return null
@@ -97,7 +94,9 @@ export default function Contact() {
       </div>
 
       <div class='text-left child:w-full'>
-        <label class='block py-1'>Name *</label>
+        <label for='name' class='block py-1'>
+          Name *
+        </label>
         <input
           name='name'
           id='name'
@@ -138,7 +137,9 @@ export default function Contact() {
           type='submit'
           id='submitButton'
           disabled={isDisabled()}
-          class={`${isDisabled() ? `opacity-50` : ``} p-2 rounded-xl bg-niceGreen text-lg text-mainBackground z-10 transition duration-300 ease-in-out`}
+          class={`${
+            isDisabled() ? `opacity-50` : ``
+          } p-2 rounded-xl bg-niceGreen text-lg text-mainBackground z-10 transition duration-300 ease-in-out`}
         >
           {isSubmitted() ? `Thanks for reaching out!` : `Submit`}
         </button>

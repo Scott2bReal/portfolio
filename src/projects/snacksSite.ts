@@ -5,7 +5,7 @@ Sanity, integrated with a Discord bot so we can update the site via slash
 commands`
 
 export const snacksSite: Project = {
-  projectName: 'nastysnacks.com',
+  projectName: 'Nasty Snacks',
   projectDescription: description,
   projectLink: `https://nastysnacks.com`,
 }

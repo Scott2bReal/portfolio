@@ -43,7 +43,7 @@ export default function ProjectCard({ project, anyHovered }: Props) {
             </svg>
           </a>
         </div>
-        <p class='opacity-90'>{projectDescription}</p>
+        <p class='opacity-90 lg:max-w-full mx-auto max-w-[80%]'>{projectDescription}</p>
       </div>
     </div>
   )

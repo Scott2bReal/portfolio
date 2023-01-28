@@ -5,7 +5,7 @@ Sanity, integrated with a Discord bot so we can update the site via slash
 commands`
 
 export const snacksSite: Project = {
-  projectName: 'Nasty Snacks',
+  projectName: 'nastysnacks.com',
   projectDescription: description,
-  projectLink: `https://nastysnacks.netlify.app`,
+  projectLink: `https://nastysnacks.com`,
 }

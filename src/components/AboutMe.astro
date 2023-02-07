@@ -1,108 +1,108 @@
 ---
-import {Image} from '@astrojs/image/components'
+import { Image } from '@astrojs/image/components'
 ---
 
-<div class="flex gap-1 justify-center items-center relative pt-4">
+<div class='relative flex items-center justify-center gap-1 pt-4'>
   <Image
-    src="/images/scott_at_work_96.png"
+    src='/images/scott_at_work_96.png'
     height={64}
     width={64}
     format='webp'
-    alt="Scott hard at work"
+    alt='Scott hard at work'
   />
-  <h2 class="py-6 text-2xl">About Me</h2>
-  <button id="show" aria-label="showAboutMe">
+  <h2 class='py-6 text-2xl'>About Me</h2>
+  <button id='show' aria-label='showAboutMe'>
     <svg
-      id="downArrow"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="w-6 h-6 inline text-niceBlue animate-bounce"
+      id='downArrow'
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'
+      class='inline h-6 w-6 animate-bounce text-niceBlue'
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='M19.5 8.25l-7.5 7.5-7.5-7.5'></path>
     </svg></button
   >
-  <button id="hide" class="hidden text-niceBlue" aria-label="hideAboutMe">
+  <button id='hide' class='hidden text-niceBlue' aria-label='hideAboutMe'>
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="w-6 h-6"
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'
+      class='h-6 w-6'
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='M4.5 15.75l7.5-7.5 7.5 7.5'></path>
     </svg>
   </button>
   <p
-    id="aboutMe"
-    class="hidden p-2 z-[2] outline-niceBlue outline rounded-xl absolute top-24 bg-mainBackground/20 backdrop-blur-xl md:max-w-[50vw] shadow-lg shadow-neutral-900 overflow-y-auto max-h-96"
+    id='aboutMe'
+    class='absolute top-24 z-[2] hidden max-h-96 overflow-y-auto rounded-xl bg-mainBackground/20 p-2 shadow-lg shadow-neutral-900 outline outline-niceBlue backdrop-blur-xl md:max-w-[50vw]'
   >
     Currently located in Chicago. After over a decade of playing trumpet
     professionally, I decided to pursue another passion - tech!<br /><br />In
     2020 I completed Harvard's <a
-      class="text-niceGreen hover:opacity-50"
-      href="https://cs50.harvard.edu/x/2023/">CS50x course</a
+      class='text-niceGreen hover:opacity-50'
+      href='https://cs50.harvard.edu/x/2023/'>CS50x course</a
     >, and about a year later, I found <a
-      href="https://launchschool.com"
-      class="text-niceGreen hover:opacity-50">Launch School</a
+      href='https://launchschool.com'
+      class='text-niceGreen hover:opacity-50'>Launch School</a
     >.<br /><br />After more than a year and a half of working through their
     curriculum and mastery-based approach to learning the fundamentals of web
     development, my skills have grown to the point where I have been able to
     solve real problems, and improve the lives of those around me, using code.<br
     /><br />Seeing the impact this can have, I am even more motivated to
-    continue to apply and grow these skills in new and innovative ways.<br/><br/>
-    <a
-      href="/Scott_Hoecker_Resume.pdf"
-      class="text-niceBlue hover:opacity-50"
-    >Click here to see my resume</a>
+    continue to apply and grow these skills in new and innovative ways.<br /><br
+    />
+    <a href='/Scott_Hoecker_Resume.pdf' class='text-niceBlue hover:opacity-50'
+      >Click here to see my resume</a
+    >
   </p>
 </div>
 <script>
-  const aboutMe = document.getElementById("aboutMe");
-  const show = document.getElementById("show");
-  const hide = document.getElementById("hide");
-  const downArrow = document.getElementById("downArrow");
+  const aboutMe = document.getElementById('aboutMe')
+  const show = document.getElementById('show')
+  const hide = document.getElementById('hide')
+  const downArrow = document.getElementById('downArrow')
 
   const showAboutMe = () => {
-    if (!aboutMe || !show || !hide || !downArrow) return;
-    aboutMe.classList.remove("hidden");
-    show.classList.add("hidden");
-    hide.classList.remove("hidden");
-  };
+    if (!aboutMe || !show || !hide || !downArrow) return
+    aboutMe.classList.remove('hidden')
+    show.classList.add('hidden')
+    hide.classList.remove('hidden')
+  }
 
   const hideAboutMe = () => {
-    if (!aboutMe || !show || !hide || !downArrow) return;
-    aboutMe.classList.add("hidden");
-    show.classList.remove("hidden");
-    hide.classList.add("hidden");
-  };
+    if (!aboutMe || !show || !hide || !downArrow) return
+    aboutMe.classList.add('hidden')
+    show.classList.remove('hidden')
+    hide.classList.add('hidden')
+  }
   const toggleAboutMe = () => {
-    if (!aboutMe || !show || !hide || !downArrow) return;
+    if (!aboutMe || !show || !hide || !downArrow) return
 
-    show.addEventListener("click", () => {
-      showAboutMe();
-      downArrow.classList.remove("animate-bounce");
-    });
+    show.addEventListener('click', () => {
+      showAboutMe()
+      downArrow.classList.remove('animate-bounce')
+    })
 
-    hide.addEventListener("click", () => {
-      hideAboutMe();
-    });
+    hide.addEventListener('click', () => {
+      hideAboutMe()
+    })
 
-    document.addEventListener("click", (e) => {
+    document.addEventListener('click', (e) => {
       if (e.target !== aboutMe && e.target !== downArrow) {
-        hideAboutMe();
+        hideAboutMe()
       }
-    });
-  };
+    })
+  }
 
-  toggleAboutMe();
+  toggleAboutMe()
 </script>

@@ -43,7 +43,7 @@ export default function Contact() {
 
   return (
     <form
-      class='flex flex-col gap-2 md:w-[50vw] mx-auto px-2'
+      class='mx-auto flex flex-col gap-2 px-2 md:w-[50vw]'
       data-netlify='true'
       netlify-honeypot='botField'
       name='contact'
@@ -137,9 +137,8 @@ export default function Contact() {
           type='submit'
           id='submitButton'
           disabled={isDisabled()}
-          class={`${
-            isDisabled() ? `opacity-50` : ``
-          } p-2 rounded-xl bg-niceGreen text-lg text-mainBackground z-10 transition duration-300 ease-in-out`}
+          class={`${isDisabled() ? `opacity-50` : ``
+            } z-10 rounded-xl bg-niceGreen p-2 text-lg text-mainBackground transition duration-300 ease-in-out`}
         >
           {isSubmitted() ? `Thanks for reaching out!` : `Submit`}
         </button>

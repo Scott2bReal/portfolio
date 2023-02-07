@@ -1,5 +1,5 @@
-import { createSignal, Signal } from "solid-js";
-import type { Project } from "../../types";
+import { createSignal, Signal } from 'solid-js'
+import type { Project } from '../../types'
 
 interface Props {
   project: Project
@@ -7,13 +7,13 @@ interface Props {
 }
 
 export default function ProjectCard({ project, anyHovered }: Props) {
-  const { projectName, projectDescription, projectLink } = project;
+  const { projectName, projectDescription, projectLink } = project
   const [isHovered, setIsHovered] = createSignal(false)
   const [isAnyHovered, setIsAnyHovered] = anyHovered
 
   return (
     <div
-      class="project-card"
+      class='project-card'
       onMouseEnter={() => {
         setIsHovered(true)
         setIsAnyHovered(true)
@@ -24,26 +24,35 @@ export default function ProjectCard({ project, anyHovered }: Props) {
       }}
       id={projectName + projectLink}
     >
-      <div class={`transition duration-500 ease-in-out ${isAnyHovered() && !isHovered() ? `opacity-50` : `` }`}>
-        <div class="">
-          <a href={projectLink} target="_blank">
-            <h3 class="text-2xl font-bold inline">{projectName}</h3>
+      <div
+        class={`transition duration-500 ease-in-out ${
+          isAnyHovered() && !isHovered() ? `opacity-50` : ``
+        }`}
+      >
+        <div class=''>
+          <a href={projectLink} target='_blank'>
+            <h3 class='inline text-2xl font-bold'>{projectName}</h3>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class={`${isHovered() ? `animate-bounce` : ``} w-6 h-6 inline text-niceBlue hover:opacity-50 -translate-y-1`}
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke-width='1.5'
+              stroke='currentColor'
+              class={`${
+                isHovered() ? `animate-bounce` : ``
+              } inline h-6 w-6 -translate-y-1 text-niceBlue hover:opacity-50`}
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                d='M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25'
+              ></path>
             </svg>
           </a>
         </div>
-        <p class='opacity-90 lg:max-w-full mx-auto max-w-[80%]'>{projectDescription}</p>
+        <p class='mx-auto max-w-[80%] opacity-90 lg:max-w-full'>
+          {projectDescription}
+        </p>
       </div>
     </div>
   )

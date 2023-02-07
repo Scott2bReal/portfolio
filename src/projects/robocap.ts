@@ -1,4 +1,4 @@
-import type {Project} from '../types'
+import type { Project } from '../types'
 
 const description = `A Discord bot built in Rust to manage and track a
 long-running weekly Dungeons and Dragons game`

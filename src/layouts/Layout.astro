@@ -1,43 +1,43 @@
 ---
-import Socials from "../components/Socials.astro";
-import SEO from "../components/SEO.astro";
+import Socials from '../components/Socials.astro'
+import SEO from '../components/SEO.astro'
 
 export interface Props {
-  title: string;
+  title: string
 }
 
-const { title } = Astro.props;
-const generator = Astro.generator;
+const { title } = Astro.props
+const generator = Astro.generator
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
     <SEO />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
     <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/images/scott_at_work_icon.png"
+      rel='icon'
+      type='image/svg+xml'
+      href='/images/scott_at_work_icon.png'
     />
-    <meta name="generator" content={Astro.generator} />
+    <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <slot />
-    <footer class="pt-8 sm:p-6 px-4 w-full flex gap-4 items-center">
+    <footer class='flex w-full items-center gap-4 px-4 pt-8 sm:p-6'>
       <Socials />
-      <div class="w-full"></div>
-      <span class="min-w-fit text-xs"
+      <div class='w-full'></div>
+      <span class='min-w-fit text-xs'
         >🚀 <a
-          href="https://astro.build"
-          class="link text-gradient hover:opacity-50">{generator}</a
+          href='https://astro.build'
+          class='link text-gradient hover:opacity-50'>{generator}</a
         ></span
       >
     </footer>
+    <style is:global>
+      @import '../styles/global.css';
+    </style>
   </body>
-  <style is:global>
-    @import "../styles/global.css";
-  </style>
 </html>

@@ -1,6 +1,5 @@
 ---
 import AboutMe from "../components/AboutMe.astro";
-import AnimatedLine from "../components/AnimatedLine.astro";
 import Contact from "../components/Contact";
 import Projects from "../components/projects/Projects";
 import Layout from "../layouts/Layout.astro";
@@ -26,79 +25,13 @@ import Layout from "../layouts/Layout.astro";
       <Projects client:load />
     </section>
 
-    <AnimatedLine />
-
     <!-- Contact Form -->
     <section id="contact">
-      <div class="flex justify-center gap-2">
-        <h2 class="pb-7 pt-7 text-3xl">Get in Touch</h2>
-        <button id="contactFormToggle" aria-label="toggle contact form">
-          <svg
-            id="contactFormDownArrow"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="inline h-6 w-6 animate-bounce text-niceBlue"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="contactFormUpArrow"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="hidden h-6 w-6 text-niceBlue"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
-          </svg>
-        </button>
-      </div>
-      <div id="contactFormContainer" class="hidden">
-        <Contact client:load />
-      </div>
+      <h2 class="pb-7 pt-7 text-3xl">Get in Touch</h2>
+      <Contact client:load />
     </section>
   </main>
 </Layout>
 <style is:global>
   @import "../styles/global.css";
 </style>
-<script>
-  function toggleContactForm() {
-    const contactFormContainer = document.getElementById(
-      "contactFormContainer"
-    );
-    if (!contactFormContainer) return;
-    contactFormContainer.classList.toggle("hidden");
-  }
-  function switchArrows() {
-    const contactFormDownArrow = document.getElementById(
-      "contactFormDownArrow"
-    );
-    const contactFormUpArrow = document.getElementById("contactFormUpArrow");
-    if (!contactFormDownArrow || !contactFormUpArrow) return;
-    contactFormDownArrow.classList.toggle("hidden");
-    contactFormUpArrow.classList.toggle("hidden");
-  }
-  function addToggleListener() {
-    const contactFormToggle = document.getElementById("contactFormToggle");
-    if (!contactFormToggle) return;
-    const svg = contactFormToggle.children[0];
-    if (!svg) return;
-    contactFormToggle.addEventListener("click", () => {
-      svg.classList.remove("animate-bounce");
-      switchArrows();
-      toggleContactForm();
-    });
-  }
-  addToggleListener();
-</script>

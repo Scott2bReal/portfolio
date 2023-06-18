@@ -3,3 +3,9 @@ export type Project = {
   projectDescription: string
   projectLink: string
 }
+
+export type Work = {
+  projectName: string
+  projectDescription: string
+  projectLink: string
+}

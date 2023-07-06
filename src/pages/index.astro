@@ -3,7 +3,7 @@ import AboutMe from "../components/AboutMe.astro";
 import Contact from "../components/Contact";
 import Projects from "../components/projects/Projects";
 import Layout from "../layouts/Layout.astro";
-import { PROJECTS, WORK } from "../projects";
+import { PROJECTS } from "../projects";
 ---
 
 <Layout title="Scott Hoecker">
@@ -20,15 +20,10 @@ import { PROJECTS, WORK } from "../projects";
     <!-- About me dropdown -->
     <AboutMe />
 
-    <!-- Work Showcase -->
-    <section id="work" class="md:max-w-[50%] md:mx-auto">
-      <h2 class="p-6 text-3xl">Things I've Worked On</h2>
-      <Projects projects={WORK} client:load />
-    </section>
-
     <!-- Project Showcase -->
     <section id="projects">
-      <h2 class="p-6 text-3xl">Things I've Built Myself</h2>
+      <!-- <h2 class="p-6 text-3xl">Things I've Built Myself</h2> -->
+      <h2 class="pb-7 pt-7 text-3xl">Things I've Built</h2>
       <Projects projects={PROJECTS} client:load />
     </section>
 

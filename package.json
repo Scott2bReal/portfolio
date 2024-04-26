@@ -11,16 +11,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.2",
-    "@astrojs/solid-js": "^2.2.0",
-    "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.8.0",
-    "sharp": "^0.32.1",
-    "solid-js": "^1.7.7",
-    "tailwindcss": "^3.3.2"
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/netlify": "^5.2.0",
+    "@astrojs/solid-js": "^4.1.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.7.0",
+    "sharp": "^0.32.6",
+    "solid-js": "^1.8.17",
+    "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "prettier-plugin-astro": "^0.10.0",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.14"
   }
 }

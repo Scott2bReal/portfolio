@@ -1,4 +1,4 @@
-import { createSignal, Signal } from "solid-js";
+import { createSignal, type Signal } from "solid-js";
 import type { Project } from "../../types";
 
 interface Props {

@@ -1,9 +1,10 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Image } from "astro:assets"
 ---
 
 <div class='relative flex items-center justify-center gap-1 pt-4'>
   <Image
+    loading="eager"
     src='/images/scott_at_work_64.png'
     height={64}
     width={64}

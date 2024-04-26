@@ -4,45 +4,45 @@ import {
   createSignal,
   onCleanup,
   type Setter,
-} from "solid-js";
+} from "solid-js"
 
 const isEmpty = (string: string) => {
-  if (!string) return true;
-  if (string.trim().length === 0) return true;
-  return false;
-};
+  if (!string) return true
+  if (string.trim().length === 0) return true
+  return false
+}
 
 export default function Contact() {
-  const [name, setName] = createSignal("");
-  const [email, setEmail] = createSignal("");
-  const [message, setMessage] = createSignal("");
-  const [botField, setBotField] = createSignal("");
-  const [isSubmitted, setIsSubmitted] = createSignal(false);
+  const [name, setName] = createSignal("")
+  const [email, setEmail] = createSignal("")
+  const [message, setMessage] = createSignal("")
+  const [botField, setBotField] = createSignal("")
+  const [isSubmitted, setIsSubmitted] = createSignal(false)
 
   // Form handling
   const isFormComplete = (inputs: Accessor<string>[]) => {
-    if (isSubmitted()) return false;
+    if (isSubmitted()) return false
     for (let i = 0; i < inputs.length; i++) {
-      const input = inputs[i];
+      const input = inputs[i]
       if (typeof input === "function") {
-        if (isEmpty(input())) return false;
+        if (isEmpty(input())) return false
       } else {
-        return false;
+        return false
       }
     }
-    return true;
-  };
-  const requiredGetters = [name, email, message];
-  const setters = [setName, setEmail, setMessage, setBotField];
+    return true
+  }
+  const requiredGetters = [name, email, message]
+  const setters = [setName, setEmail, setMessage, setBotField]
   const clearForm = (setters: Setter<string>[]) => {
-    setters.forEach((setter) => setter(""));
-    return null;
-  };
-  const isDisabled = createMemo(() => !isFormComplete(requiredGetters));
+    setters.forEach((setter) => setter(""))
+    return null
+  }
+  const isDisabled = createMemo(() => !isFormComplete(requiredGetters))
   onCleanup(() => {
-    setIsSubmitted(false);
-    clearForm(setters);
-  });
+    setIsSubmitted(false)
+    clearForm(setters)
+  })
 
   return (
     <form
@@ -53,13 +53,13 @@ export default function Contact() {
       method="post"
       action="/"
       onSubmit={async (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const data = {
           name: name(),
           email: email(),
           message: message(),
           botField: botField(),
-        };
+        }
         const encode = (data: { [key: string]: string }) => {
           return Object.keys(data)
             .map(
@@ -68,8 +68,8 @@ export default function Contact() {
                 "=" +
                 encodeURIComponent(data[key] ?? ""),
             )
-            .join("&");
-        };
+            .join("&")
+        }
         await fetch("/", {
           method: "POST",
           headers: {
@@ -79,9 +79,9 @@ export default function Contact() {
             "form-name": "contact",
             ...data,
           }),
-        });
-        clearForm(setters);
-        setIsSubmitted(true);
+        })
+        clearForm(setters)
+        setIsSubmitted(true)
       }}
     >
       <input class="hidden" name="form-name" value="contact" />
@@ -140,12 +140,13 @@ export default function Contact() {
           type="submit"
           id="submitButton"
           disabled={isDisabled()}
-          class={`${isDisabled() ? `opacity-50` : ``
-            } z-10 rounded-xl bg-niceGreen p-2 text-lg text-mainBackground transition duration-300 ease-in-out`}
+          class={`${
+            isDisabled() ? `opacity-50` : ``
+          } z-10 rounded-xl bg-niceGreen p-2 text-lg text-mainBackground transition duration-300 ease-in-out`}
         >
           {isSubmitted() ? `Thanks for reaching out!` : `Submit`}
         </button>
       }
     </form>
-  );
+  )
 }

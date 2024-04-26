@@ -1,17 +1,17 @@
 ---
-import Socials from "../components/Socials.astro";
-import Nav from "../components/Nav.astro";
-import SEO from "../components/SEO.astro";
+import Socials from "../components/Socials.astro"
+import Nav from "../components/Nav.astro"
+import SEO from "../components/SEO.astro"
 
 export interface Props {
-  title: string;
+  title: string
 }
 
-const { title } = Astro.props;
-const generator = Astro.generator;
+const { title } = Astro.props
+const generator = Astro.generator
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html class="scroll-smooth" lang="en">
   <head>
     <SEO />
@@ -28,7 +28,9 @@ const generator = Astro.generator;
   <Nav />
   <body>
     <slot />
-    <footer class="flex w-full items-center gap-4 px-4 pt-8 sm:p-6 max-w-[1440px] mx-auto">
+    <footer
+      class="mx-auto flex w-full max-w-[1440px] items-center gap-4 px-4 pt-8 sm:p-6"
+    >
       <Socials />
       <div class="w-full"></div>
       <span class="min-w-fit text-xs"

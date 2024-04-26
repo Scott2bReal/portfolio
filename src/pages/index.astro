@@ -1,16 +1,16 @@
 ---
-import AboutMe from "../components/AboutMe.astro";
-import Contact from "../components/Contact";
-import Projects from "../components/projects/Projects";
-import { personalProjectsId, workId } from "../constants";
-import Layout from "../layouts/Layout.astro";
-import { PROJECTS, WORK } from "../projects";
+import AboutMe from "../components/AboutMe.astro"
+import Contact from "../components/Contact"
+import Projects from "../components/projects/Projects"
+import { personalProjectsId, workId } from "../constants"
+import Layout from "../layouts/Layout.astro"
+import { PROJECTS, WORK } from "../projects"
 ---
 
 <Layout title="Scott Hoecker">
-  <main class="mx-auto text-center md:w-[80vw] max-w-[1440px]">
+  <main class="mx-auto max-w-[1440px] text-center md:w-[80vw]">
     <div class="mx-auto w-fit pt-8 sm:pt-2">
-      <h1 class="text-5xl mt-6 md:mt-12 lg:text-7xl">
+      <h1 class="mt-6 text-5xl md:mt-12 lg:text-7xl">
         Hi, I'm <span class="block text-niceGreen sm:inline">Scott Hoecker</span
         >
       </h1>
@@ -29,14 +29,20 @@ import { PROJECTS, WORK } from "../projects";
     <!-- Personal Project Showcase -->
     <section class="scroll-m-6" id={personalProjectsId}>
       <h3 class="pb-4 pt-16 text-3xl">Personal projects</h3>
-      <p class="pb-7 italic">These are some passion projects I'm especially proud of!</p>
+      <p class="pb-7 italic">
+        These are some passion projects I'm especially proud of!
+      </p>
       <Projects projects={PROJECTS} client:load />
     </section>
 
     <!-- Contact Form -->
     <section class="pb-24" id="contact">
-      <h4 class="text-3xl pt-24">Get in Touch</h2>
-      <p class="my-6"><em>Please feel free to drop me a message! <br />I'm currently available for freelance work</em></p>
+      <h4 class="pt-24 text-3xl">Get in Touch</h4>
+      <p class="my-6">
+        <em
+          >Please feel free to drop me a message! <br />I'm currently available
+          for freelance work</em>
+      </p>
       <Contact client:load />
     </section>
   </main>

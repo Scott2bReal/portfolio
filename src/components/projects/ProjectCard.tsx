@@ -32,7 +32,7 @@ export default function ProjectCard({ project, anyHovered }: Props) {
           }`}
       >
         <h3 class={`inline text-2xl font-bold`}>{projectName}</h3>
-        <p class="mx-auto max-w-[80%] opacity-90 lg:max-w-full">
+        <p class="mx-auto max-w-[80%] opacity-90 lg:max-w-full mt-2">
           {projectDescription}
         </p>
       </div>

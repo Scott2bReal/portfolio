@@ -46,7 +46,7 @@ export default function Contact() {
 
   return (
     <form
-      class="mx-auto flex flex-col gap-2 px-2 md:w-[50vw]"
+      class="mx-auto flex flex-col gap-2 px-2 md:w-[50%]"
       data-netlify="true"
       netlify-honeypot="botField"
       name="contact"

@@ -1,10 +1,11 @@
 ---
-import { aboutMeId, workId, personalProjectsId } from '../constants.ts'
+import { aboutMeId, workId, personalProjectsId, contactId } from '../constants.ts'
 ---
-<nav class="h-fit fixed inset-0 z-10 bg-mainBackground text-mainText">
-  <div class="w-[93%] border-b mx-auto justify-center gap-6 flex child-hover:text-niceBlue p-2 border-niceGreen">
-    <a href={`#${aboutMeId}`}>About me</a>
+<nav class="h-fit fixed inset-0 max-w-[1440px] mx-auto z-10 bg-mainBackground text-mainText">
+  <div class="w-[93%] md:w-[85%] border-b mx-auto justify-center gap-6 flex child-hover:text-niceBlue p-2 border-niceGreen">
+    <a href={`#${aboutMeId}`}>About</a>
     <a href={`#${workId}`}>Work</a>
     <a href={`#${personalProjectsId}`}>Projects</a>
+    <a href={`#${contactId}`}>Contact</a>
   </div>
 </nav>

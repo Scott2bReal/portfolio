@@ -1,5 +1,6 @@
 ---
 import Socials from "../components/Socials.astro";
+import Nav from "../components/Nav.astro";
 import SEO from "../components/SEO.astro";
 
 export interface Props {
@@ -11,7 +12,7 @@ const generator = Astro.generator;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
   <head>
     <SEO />
     <meta charset="UTF-8" />
@@ -24,6 +25,7 @@ const generator = Astro.generator;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+  <Nav />
   <body>
     <slot />
     <footer class="flex w-full items-center gap-4 px-4 pt-8 sm:p-6">

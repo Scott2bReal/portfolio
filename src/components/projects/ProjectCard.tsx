@@ -6,11 +6,6 @@ interface Props {
   anyHovered: Signal<boolean>
 }
 
-/** Include the `/` for relative paths */
-const createNetlifyImageSrc = (imageSrc: string): string => {
-  return `/.netlify/images?url=${imageSrc}`
-}
-
 export default function ProjectCard({ project, anyHovered }: Props) {
   const { projectName, projectDescription, projectLink, imageSrc } = project
   const [isHovered, setIsHovered] = createSignal(false)
@@ -21,7 +16,7 @@ export default function ProjectCard({ project, anyHovered }: Props) {
       href={projectLink}
       target="_blank"
       rel="noopener noreferrer"
-      class="flex-1 rounded-xl p-4 text-center shadow-lg shadow-neutral-900 outline outline-niceGreen transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-mainText"
+      class="flex-1 rounded-xl p-4 text-center group shadow-lg shadow-neutral-900 outline outline-niceGreen transition duration-300 ease-in-out hover:scale-[102%] hover:shadow-lg hover:shadow-mainText"
       onMouseEnter={() => {
         setIsHovered(true)
         setIsAnyHovered(true)
@@ -38,7 +33,7 @@ export default function ProjectCard({ project, anyHovered }: Props) {
         }`}
       >
         <h3 class={`inline text-2xl font-bold`}>{projectName}</h3>
-        {imageSrc && <img class="rounded-md" src={createNetlifyImageSrc(imageSrc)} />}
+        {imageSrc && <img alt={projectName} class="rounded-md group-hover:scale-[100%] transition duration-500 ease-in-out" src={imageSrc} />}
         <p class="mx-auto mt-2 max-w-[80%] opacity-90 lg:max-w-full">
           {projectDescription}
         </p>

@@ -8,7 +8,7 @@ interface Props {
 
 /** Include the `/` for relative paths */
 const createNetlifyImageSrc = (imageSrc: string): string => {
-  return `"/.netlify/images?url=${imageSrc}"`
+  return `/.netlify/images?url=${imageSrc}`
 }
 
 export default function ProjectCard({ project, anyHovered }: Props) {

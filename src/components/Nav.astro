@@ -1,4 +1,5 @@
 ---
+import NavLink from "./NavLink.astro"
 import {
   aboutMeId,
   workId,
@@ -13,9 +14,9 @@ import {
   <div
     class="mx-auto flex w-[93%] justify-center gap-6 border-b border-niceGreen p-4 child-hover:text-niceBlue md:w-[55%]"
   >
-    <a href={`#${aboutMeId}`}>About</a>
-    <a href={`#${workId}`}>Work</a>
-    <a href={`#${personalProjectsId}`}>Projects</a>
-    <a href={`#${contactId}`}>Contact</a>
+    <NavLink href={aboutMeId}>About</NavLink>
+    <NavLink href={workId}>Work</NavLink>
+    <NavLink href={personalProjectsId}>Projects</NavLink>
+    <NavLink href={contactId}>Contact</NavLink>
   </div>
 </nav>

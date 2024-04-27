@@ -1,0 +1,9 @@
+---
+interface Props {
+  href: string
+}
+
+const { href } = Astro.props
+---
+
+<a class="transition duration-300 ease-in-out" href={`#${href}`}><slot /></a>

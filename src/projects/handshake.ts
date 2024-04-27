@@ -1,7 +1,7 @@
 import type { Project } from "../types"
 
 export const handshake: Project = {
-  imageSrc: "/images/jhs.png",
+  imageSrc: "/images/jhs.webp",
   projectLink: "https://joinhandshake.com",
   projectName: "Handshake",
   projectDescription:

@@ -28,12 +28,12 @@ export default function ProjectCard({ project, anyHovered }: Props) {
       id={projectName + projectLink}
     >
       <div
-        class={`transition duration-500 ease-in-out flex flex-col gap-4 ${
+        class={`flex flex-col gap-4 transition duration-500 ease-in-out ${
           isAnyHovered() && !isHovered() ? `opacity-50` : ``
         }`}
       >
         <h3 class={`inline text-2xl font-bold`}>{projectName}</h3>
-        {imageSrc && <img class="rounded-md" src={imageSrc}/>}
+        {imageSrc && <img class="rounded-md" src={imageSrc} />}
         <p class="mx-auto mt-2 max-w-[80%] opacity-90 lg:max-w-full">
           {projectDescription}
         </p>

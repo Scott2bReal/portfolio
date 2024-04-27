@@ -6,6 +6,11 @@ interface Props {
   anyHovered: Signal<boolean>
 }
 
+/** Include the `/` for relative paths */
+const createNetlifyImageSrc = (imageSrc: string): string => {
+  return `"/.netlify/images?url=${imageSrc}"`
+}
+
 export default function ProjectCard({ project, anyHovered }: Props) {
   const { projectName, projectDescription, projectLink, imageSrc } = project
   const [isHovered, setIsHovered] = createSignal(false)
@@ -33,7 +38,7 @@ export default function ProjectCard({ project, anyHovered }: Props) {
         }`}
       >
         <h3 class={`inline text-2xl font-bold`}>{projectName}</h3>
-        {imageSrc && <img class="rounded-md" src={imageSrc} />}
+        {imageSrc && <img class="rounded-md" src={createNetlifyImageSrc(imageSrc)} />}
         <p class="mx-auto mt-2 max-w-[80%] opacity-90 lg:max-w-full">
           {projectDescription}
         </p>

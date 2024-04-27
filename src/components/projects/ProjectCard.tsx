@@ -16,7 +16,7 @@ export default function ProjectCard({ project, anyHovered }: Props) {
       href={projectLink}
       target="_blank"
       rel="noopener noreferrer"
-      class="flex-1 rounded-xl p-4 text-center group shadow-lg shadow-neutral-900 outline outline-niceGreen transition duration-300 ease-in-out hover:scale-[102%] hover:shadow-lg hover:shadow-mainText"
+      class="flex-1 rounded-xl p-4 text-center group shadow-lg shadow-neutral-900 border border-niceGreen transition duration-300 ease-in-out hover:scale-[102%] focus-visible:outline-niceGreen focus-visible:outline"
       onMouseEnter={() => {
         setIsHovered(true)
         setIsAnyHovered(true)

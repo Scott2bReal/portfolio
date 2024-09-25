@@ -6,10 +6,9 @@ import tailwind from '@astrojs/tailwind'
 // https://astro.build/config
 import solidJs from '@astrojs/solid-js'
 
+import partytown from '@astrojs/partytown';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    solidJs(),
-  ],
+  integrations: [tailwind(), solidJs(), partytown()],
 })

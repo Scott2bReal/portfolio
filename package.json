@@ -11,20 +11,20 @@
     "astro": "astro",
     "format": "prettier --check src/**/*.{astro,ts,tsx}",
     "format:fix": "prettier --write src/**/*.{astro,ts,tsx}"
-
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/netlify": "^5.2.0",
-    "@astrojs/solid-js": "^4.1.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.7.0",
-    "sharp": "^0.32.6",
-    "solid-js": "^1.8.17",
-    "tailwindcss": "^3.4.3"
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/netlify": "^5.5.3",
+    "@astrojs/partytown": "^2.1.2",
+    "@astrojs/solid-js": "^4.4.2",
+    "@astrojs/tailwind": "^5.1.1",
+    "astro": "^4.15.9",
+    "sharp": "^0.33.5",
+    "solid-js": "^1.9.1",
+    "tailwindcss": "^3.4.13"
   },
   "devDependencies": {
-    "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.14"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.8"
   }
 }

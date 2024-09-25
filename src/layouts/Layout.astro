@@ -1,5 +1,6 @@
 ---
 import Socials from "../components/Socials.astro"
+import GoogleAnalytics from "../components/GoogleAnalytics.astro"
 import Nav from "../components/Nav.astro"
 import SEO from "../components/SEO.astro"
 
@@ -25,6 +26,7 @@ const generator = Astro.generator
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+  <GoogleAnalytics />
   <Nav />
   <body>
     <slot />

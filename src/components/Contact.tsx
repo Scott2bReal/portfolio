@@ -46,7 +46,7 @@ export default function Contact() {
 
   return (
     <form
-      class="mx-auto flex flex-col gap-2 px-2 md:w-[50%]"
+      class="mx-auto flex flex-col gap-2 px-2 md:w-1/2"
       data-netlify="true"
       netlify-honeypot="botField"
       name="contact"
@@ -132,7 +132,7 @@ export default function Contact() {
           value={message()}
           onInput={(e) => setMessage(e.currentTarget.value)}
           rows="5"
-        ></textarea>
+        />
       </div>
 
       {

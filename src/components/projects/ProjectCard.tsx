@@ -1,22 +1,21 @@
-import { createSignal, type Signal } from "solid-js"
+import { createSignal } from "solid-js"
+import { useProjectCardContext } from "../../context/CardProvider"
 import type { Project } from "../../types"
 
 interface Props {
   project: Project
-  anyHovered: Signal<boolean>
 }
 
-export default function ProjectCard({ project, anyHovered }: Props) {
-  const { projectName, projectDescription, projectLink, imageSrc } = project
+export default function ProjectCard(props: Props) {
   const [isHovered, setIsHovered] = createSignal(false)
-  const [isAnyHovered, setIsAnyHovered] = anyHovered
+  const [isAnyHovered, setIsAnyHovered] = useProjectCardContext()
 
   return (
     <a
-      href={projectLink}
+      href={props.project.projectLink}
       target="_blank"
       rel="noopener noreferrer"
-      class="flex-1 rounded-xl p-4 text-center group shadow-lg shadow-neutral-900 border border-niceGreen transition duration-300 ease-in-out hover:scale-[102%] focus-visible:outline-niceGreen focus-visible:outline"
+      class="group flex-1 rounded-xl border border-niceGreen p-4 text-center shadow-lg shadow-neutral-900 transition duration-300 ease-in-out hover:scale-[102%] focus-visible:outline focus-visible:outline-niceGreen"
       onMouseEnter={() => {
         setIsHovered(true)
         setIsAnyHovered(true)
@@ -25,17 +24,23 @@ export default function ProjectCard({ project, anyHovered }: Props) {
         setIsHovered(false)
         setIsAnyHovered(false)
       }}
-      id={projectName + projectLink}
+      id={props.project.projectName + props.project.projectLink}
     >
       <div
         class={`flex flex-col gap-4 transition duration-500 ease-in-out ${
           isAnyHovered() && !isHovered() ? `opacity-50` : ``
         }`}
       >
-        <h3 class={`inline text-2xl font-bold`}>{projectName}</h3>
-        {imageSrc && <img alt={projectName} class="rounded-md group-hover:scale-[100%] transition duration-500 ease-in-out" src={imageSrc} />}
+        <h3 class={`inline text-2xl font-bold`}>{props.project.projectName}</h3>
+        {props.project.imageSrc && (
+          <img
+            alt={props.project.projectName}
+            class="rounded-md transition duration-500 ease-in-out group-hover:scale-[100%]"
+            src={props.project.imageSrc}
+          />
+        )}
         <p class="mx-auto mt-2 max-w-[80%] opacity-90 lg:max-w-full">
-          {projectDescription}
+          {props.project.projectDescription}
         </p>
       </div>
     </a>

@@ -20,6 +20,7 @@ export default tseslint.config(
       ".astro/**",
       "prettier.config.cjs",
       "tailwind.config.cjs",
+      "src/env.d.ts",
     ],
   },
   eslint.configs.recommended,

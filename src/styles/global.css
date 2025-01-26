@@ -4,28 +4,28 @@
 
 @layer base {
   html {
-    @apply bg-mainBackground text-mainText tracking-widest selection:bg-niceBlue selection:text-mainBackground;
+    @apply bg-mainBackground tracking-widest text-mainText selection:bg-niceBlue selection:text-mainBackground;
   }
 
   body {
-    @apply w-full p-2 min-h-[100vh];
+    @apply min-h-[100vh] w-full p-2;
   }
 }
 
 @layer components {
   input {
-    @apply text-mainBackground bg-mainText p-1 focus:outline-niceBlue focus:outline-none rounded-xl
+    @apply rounded-xl bg-mainText p-1 text-mainBackground focus:outline-none focus:outline-niceBlue;
   }
 
   textarea {
-    @apply text-mainBackground bg-mainText p-1 focus:outline-niceBlue focus:outline-none rounded-xl
+    @apply rounded-xl bg-mainText p-1 text-mainBackground focus:outline-none focus:outline-niceBlue;
   }
 
   .social-icon {
-    @apply h-8 w-8 hover:text-niceGreen transition duration-150 ease-in-out;
+    @apply h-8 w-8 transition duration-150 ease-in-out hover:text-niceGreen;
   }
 
   .text-gradient {
-    @apply text-transparent bg-gradient-to-r from-niceBlue to-niceGreen bg-clip-text;
+    @apply bg-gradient-to-r from-niceBlue to-niceGreen bg-clip-text text-transparent;
   }
 }

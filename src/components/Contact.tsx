@@ -140,8 +140,9 @@ export default function Contact() {
           type="submit"
           id="submitButton"
           disabled={isDisabled()}
-          class={`${isDisabled() ? `opacity-50` : ``
-            } z-10 rounded-xl bg-niceGreen p-2 text-lg text-mainBackground transition duration-300 ease-in-out`}
+          class={`${
+            isDisabled() ? `opacity-50` : ``
+          } z-10 rounded-xl bg-niceGreen p-2 text-lg text-mainBackground transition duration-300 ease-in-out`}
         >
           {isSubmitted() ? `Thanks for reaching out!` : `Submit`}
         </button>

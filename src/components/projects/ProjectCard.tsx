@@ -27,8 +27,9 @@ export default function ProjectCard(props: Props) {
       id={props.project.projectName + props.project.projectLink}
     >
       <div
-        class={`flex flex-col gap-4 transition duration-500 ease-in-out ${isAnyHovered() && !isHovered() ? `opacity-50` : ``
-          }`}
+        class={`flex flex-col gap-4 transition duration-500 ease-in-out ${
+          isAnyHovered() && !isHovered() ? `opacity-50` : ``
+        }`}
       >
         <h3 class={`inline text-2xl font-bold`}>{props.project.projectName}</h3>
         {props.project.imageSrc && (

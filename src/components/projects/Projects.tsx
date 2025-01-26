@@ -1,7 +1,7 @@
 import { For } from "solid-js"
-import ProjectCard from "./ProjectCard"
-import type { Project } from "../../types"
 import CardProvider from "../../context/CardProvider"
+import type { Project } from "../../types"
+import ProjectCard from "./ProjectCard"
 
 interface ProjectProps {
   projects: Project[]

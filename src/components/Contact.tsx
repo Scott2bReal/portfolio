@@ -96,7 +96,7 @@ export default function Contact() {
         />
       </div>
 
-      <div class="text-left child:w-full">
+      <div class="child:w-full text-left">
         <label for="name" class="block py-1">
           Name *
         </label>
@@ -109,7 +109,7 @@ export default function Contact() {
         />
       </div>
 
-      <div class="text-left child:w-full">
+      <div class="child:w-full text-left">
         <label class="block py-1" for="email">
           Email *
         </label>
@@ -122,7 +122,7 @@ export default function Contact() {
         />
       </div>
 
-      <div class="text-left child:w-full">
+      <div class="child:w-full text-left">
         <label class="block py-1" for="message">
           Message *
         </label>
@@ -142,7 +142,7 @@ export default function Contact() {
           disabled={isDisabled()}
           class={`${
             isDisabled() ? `opacity-50` : ``
-          } z-10 rounded-xl bg-niceGreen p-2 text-lg text-mainBackground transition duration-300 ease-in-out`}
+          } bg-niceGreen text-mainBackground z-10 rounded-xl p-2 text-lg transition duration-300 ease-in-out`}
         >
           {isSubmitted() ? `Thanks for reaching out!` : `Submit`}
         </button>

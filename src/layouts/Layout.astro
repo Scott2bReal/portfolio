@@ -3,6 +3,7 @@ import Socials from "../components/Socials.astro"
 import GoogleAnalytics from "../components/GoogleAnalytics.astro"
 import Nav from "../components/Nav.astro"
 import SEO from "../components/SEO.astro"
+import "../styles/global.css"
 
 export interface Props {
   title: string
@@ -13,7 +14,10 @@ const generator = Astro.generator
 ---
 
 <!doctype html>
-<html class="scroll-smooth" lang="en">
+<html
+  class="bg-mainBackground text-mainText selection:bg-niceBlue selection:text-mainBackground scroll-smooth tracking-widest"
+  lang="en"
+>
   <head>
     <SEO />
     <meta charset="UTF-8" />
@@ -28,7 +32,7 @@ const generator = Astro.generator
   </head>
   <GoogleAnalytics />
   <Nav />
-  <body>
+  <body class="min-h-[100vh] w-full p-2">
     <slot />
     <footer
       class="mx-auto flex w-full max-w-[792px] items-center gap-4 px-4 pt-8 sm:p-6"
@@ -43,8 +47,5 @@ const generator = Astro.generator
         ></span
       >
     </footer>
-    <style is:global>
-      @import "../styles/global.css";
-    </style>
   </body>
 </html>

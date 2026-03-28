@@ -1,26 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer base {
-  html {
-    @apply bg-mainBackground tracking-widest text-mainText selection:bg-niceBlue selection:text-mainBackground;
-  }
-
-  body {
-    @apply min-h-[100vh] w-full p-2;
-  }
+@theme {
+  --color-mainBackground: #282828;
+  --color-lightBackground: #665c54;
+  --color-mainText: #dfbf8e;
+  --color-niceGreen: #a9b665;
+  --color-niceBlue: #7daea3;
 }
 
+input {
+  @apply rounded-xl bg-mainText p-1 text-mainBackground focus:outline-none focus:outline-niceBlue;
+}
+
+textarea {
+  @apply rounded-xl bg-mainText p-1 text-mainBackground focus:outline-none focus:outline-niceBlue;
+}
+
+
 @layer components {
-  input {
-    @apply rounded-xl bg-mainText p-1 text-mainBackground focus:outline-none focus:outline-niceBlue;
-  }
-
-  textarea {
-    @apply rounded-xl bg-mainText p-1 text-mainBackground focus:outline-none focus:outline-niceBlue;
-  }
-
   .social-icon {
     @apply h-8 w-8 transition duration-150 ease-in-out hover:text-niceGreen;
   }
@@ -29,3 +26,6 @@
     @apply bg-gradient-to-r from-niceBlue to-niceGreen bg-clip-text text-transparent;
   }
 }
+
+@custom-variant child (& > *);
+@custom-variant child-hover (& > *:hover);

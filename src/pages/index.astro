@@ -11,24 +11,24 @@ import { PROJECTS, WORK } from "../projects"
   <main class="mx-auto max-w-[1440px] text-center md:w-[80vw]">
     <div class="mx-auto w-fit pt-8 sm:pt-2">
       <h1 class="mt-16 text-5xl md:mt-20 lg:text-7xl">
-        Hi, I'm <span class="block text-niceGreen sm:inline">Scott Hoecker</span
+        Hi, I'm <span class="text-niceGreen block sm:inline">Scott Hoecker</span
         >
       </h1>
-      <p class="text-right text-niceBlue">(like the "o" isn't there)</p>
+      <p class="text-niceBlue text-right">(like the "o" isn't there)</p>
     </div>
 
     <!-- About me section -->
     <AboutMe />
 
     <section id={workId} class="scroll-m-6">
-      <h2 class="pb-4 pt-16 text-3xl">Work</h2>
+      <h2 class="pt-16 pb-4 text-3xl">Work</h2>
       <p class="pb-7 italic">Some examples of my professional work</p>
       <Projects projects={WORK} client:load />
     </section>
 
     <!-- Personal Project Showcase -->
     <section class="scroll-m-6" id={personalProjectsId}>
-      <h3 class="pb-4 pt-16 text-3xl">Personal projects</h3>
+      <h3 class="pt-16 pb-4 text-3xl">Personal projects</h3>
       <p class="pb-7 italic">
         These are some passion projects I'm especially proud of!
       </p>
@@ -48,6 +48,3 @@ import { PROJECTS, WORK } from "../projects"
     </section>
   </main>
 </Layout>
-<style is:global>
-  @import "../styles/global.css";
-</style>
